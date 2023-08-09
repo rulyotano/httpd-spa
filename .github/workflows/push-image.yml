@@ -29,8 +29,9 @@ jobs:
             latest=true
           tags: |
             type=ref,event=pr
-            type=ref,event=branch
             type=semver,pattern={{version}}
+            type=raw,value=alpine
+            type=sha,format=short
       - name: Docker build and Push
         uses: docker/build-push-action@v4
         with:
